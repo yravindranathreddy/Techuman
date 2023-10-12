@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+
+<html>
+    {% block content %}
+
+<body style="background-color: black;">
+
+ 
+
+    <div class="section" id="about-section"> <!-- Added section division -->
+
+        <div class="row text-center">
+
+            <div class="row text-center">
+
+                <div class="col col-lg-12 col-sm-12" style="text-align: end;">
+
+                    <div class="card h-100 border-0" style="background-color: black;">
+                        <div class="card-body">
+                            <!-- <img src="../static/avatar.png" width="50%" style="margin-top: 15%;"> -->
+                            <h1 style="color: white; font-size: 3.5rem;">About</h1>
+                            <h1 style="color: white; font-size: 3.5rem;"> Makers lab</h1>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="col col-lg-6 col-sm-12" style="margin-top: -55px;">
+                    <div class="card" style="margin: 10%; background-color: black;">
+                        <div class="card-body">
+                            <div class="square-container d-flex flex-column align-items-center">
+                                <div class="d-flex flex-row">
+                                    <div class="square"></div>
+                                    <div class="square"></div>
+                                </div>
+                                <div class="d-flex flex-row">
+                                    <div class="square"></div>
+                                    <div class="square"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-6 col-sm-12" >
+                    <div class="card h-100 border-0" style="background-color: black;">
+                        <div style="margin: 10%;"></div>
+                        <div class="card-body">
+                          <p class="card-text" style="text-align: left;color: white;">Lorem ipsum dolor sit amet consectetur. Sagittis orci orci risus lectus feugiat posuere quam. Ut suscipit et dolor mauris lectus. Vestibulum lectus laoreet in semper tincidunt. Mauris vitae etiam velit nam pellentesque integer elementum. Facilisis quam accumsan arcu leo sapien leo lacinia id. Vitae nisi consequat massa convallis libero vitae dolor. Sed nibh integer in faucibus consectetur sapien auctor.</p>
+                          <button type="button" class="btn"
+                          style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;float: left;border-radius: 20px; background-color: whitesmoke;">
+                          Read More
+                          </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<style>
+
+.lip {
+
+    font-family: SF Pro Text;
+
+    font-size: 72px;
+
+    font-weight: 600;
+
+    line-height: 40px;
+
+    letter-spacing: 0em;
+
+    text-align: left;
+
+    inline-size: min-content;
+
+    /* float: right; */
+
+    color: white;
+
+}
+
+ 
+
+body {
+
+    background-color: black;
+
+    color: white;
+
+}
+
+ 
+
+.header-container {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    margin-bottom: 20px;
+
+}
+
+ 
+
+.header {
+
+    font-size: 72px;
+
+    margin: 10px 0;
+
+}
+
+ 
+
+.square {
+
+    width: 150px;
+
+    /* Adjusted width */
+
+    height: 150px;
+
+    /* Adjusted height */
+
+    background-color: #f4f6f7;
+
+    margin: 5px;
+
+}
+
+ 
+
+.card {
+
+    background-color: #1D1D1D;
+
+    border: none;
+
+}
+
+ 
+
+body {
+
+    background-color: black;
+
+    color: white;
+
+    overflow: auto;
+
+}
+
+ 
+
+.section {
+
+    scroll-snap-align: start;
+
+}
+
+ 
+
+body {
+
+    scroll-snap-type: y mandatory;
+
+    overflow-y: scroll;
+
+}
+
+</style>
+{% endblock %}

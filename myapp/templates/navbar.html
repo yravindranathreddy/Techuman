@@ -1,0 +1,466 @@
+{% extends 'base.html' %}
+  <!DOCTYPE html>
+
+<html lang="en">
+  {% block content %}
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <style>
+nav {
+  transition: background 0.4s ease-in-out;
+  background: #010101;
+}
+.is-hidden {
+  opacity: 0;
+  transition: transform 0.4s, opacity 0.2s;
+}
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.navbar-hide {
+  pointer-events: none;
+  opacity: 0;
+}
+p {
+  font-size: 1.2rem;
+}
+
+section {
+  padding-top: 8rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #f1f1f1;
+}
+
+.col-centered {
+  margin: 0 auto;
+}
+
+body {
+  background: #14161D;
+  color: #939089;
+}
+
+.menu-hamburger {
+  bottom: calc(50% - 10px);
+  right: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 575.98px) {
+  .menu-hamburger {
+    bottom: calc(50% - 12px);
+  }
+}
+
+.menu-hamburger span {
+  width: 30px;
+  height: 4px;
+  display: block;
+  background: #fafafa;
+  margin-bottom: 4px;
+  position:fixed;
+}
+
+.menu-hamburger span:last-of-type {
+  margin-bottom: 0;
+}
+
+nav .navbar-header img {
+  max-width: 110px;
+}
+
+@media (max-width: 767.98px) {
+  nav.h-navbar {
+    max-height: 90px;
+  }
+
+  nav .navbar-header img {
+    max-width: 90px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  nav.h-navbar {
+    max-height: 70px;
+  }
+
+  nav .navbar-header img {
+    max-width: 70px;
+  }
+}
+
+nav .navbar-nav li.navbar-item {
+  line-height: 110px;
+  margin-left: -5px;
+}
+
+nav .navbar-nav li.navbar-item a {
+  padding: 0 20px;
+}
+
+@media (max-width: 991.98px) {
+  nav .navbar-nav li.navbar-item a {
+    padding: 0 10px;
+  }
+
+  .row {
+    width: 100%;
+  }
+}
+
+nav .navbar-nav li ul li a p {
+  line-height: 1.4;
+}
+        body {
+
+            margin: 0;
+
+            padding: 0;
+
+            font-family: Arial, sans-serif;
+
+            height: 8000px;
+
+            background-color: #1D1D1D;
+
+        }
+
+ 
+
+        .align {
+
+            padding: 10px;
+
+        }
+
+ 
+
+        .navbar {
+
+            background-color: #1D1D1D;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 10px;
+
+            position: fixed;
+
+            top: 0;
+
+            width: 100%;
+
+            transition: top 0.3s;
+
+        }
+
+ 
+
+        .logo {
+
+            font-size: 24px;
+
+        }
+
+ 
+
+        .nav-links {
+
+            display: flex;
+
+        }
+
+ 
+
+        .nav-links li {
+
+            list-style: none;
+
+            margin-right: 20px;
+
+        }
+
+ 
+
+        .nav-links a, .nav-links button {
+
+            color: rgb(248, 244, 244);
+
+            text-decoration: none;
+
+            border: none;
+
+            background: none;
+
+            cursor: pointer;
+
+        }
+
+ 
+
+        .burger {
+
+            display: none;
+
+            cursor: pointer;
+
+        }
+
+ 
+
+        .burger div {
+
+            width: 25px;
+
+            height: 3px;
+
+            background-color: black;
+
+            margin: 5px;
+
+        }
+
+ 
+
+       
+
+ 
+
+        @media screen and (max-width: 768px) {
+
+            .nav-links {
+
+                display: none;
+
+                flex-direction: column;
+
+                background-color: #828181;
+
+                width: 100%;
+
+                position: absolute;
+
+                top: 70px;
+
+                left: 0;
+
+            }
+
+ 
+
+            .nav-links li {
+
+                margin-right: 0;
+
+                margin-bottom: 10px;
+
+            }
+
+ 
+
+            .nav-links a, .nav-links button {
+
+                padding: 10px;
+
+            }
+
+ 
+
+            .burger {
+
+                display: block;
+
+                background-color: whitesmoke;
+
+            }
+
+ 
+
+            .active {
+
+                display: flex;
+
+            }
+
+ 
+
+            .nav-links a:hover {
+
+                text-decoration: none;
+
+            }
+
+        }
+
+ 
+
+            .navbar-hidden {
+
+                top: -70px;
+
+        }
+
+    </style>
+
+</head>
+<!-- <body>
+  <nav class="navbar h-navbar p-0 fixed-top" role="navigation">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-xl-3 col-lg-2 col-sm-4 col-5">
+					<a href="/">
+						<img alt="LunarXP Logo" class="img-fluid py-3" src="https://raw.githubusercontent.com/solodev/disappearing-fixed-top-nav/master/images/logo.png" aria-role="logo">
+					</a>
+				</div>
+				<div class="col-xl-9 col-lg-10 col-sm-8 col-7">
+					<ul class="navbar-nav flex-row justify-content-end flex-wrap align-items-center mr-lg-4 mr-xl-0">
+						<li class="nav-item px-3 text-uppercase mb-0 position-relative d-none d-lg-flex"> <a class="d-block w-100 h-100 text-white py-4 position-relative top-link" href="#"><strong>About</strong></a>
+						</li>
+						<li class="nav-item px-3 text-uppercase mb-0 position-relative d-none d-lg-flex"> <a class="d-block w-100 h-100 text-white py-4 position-relative top-link" href="/locations/"><strong>Locations</strong></a>
+						</li>
+						<li class="nav-item px-3 text-uppercase mb-0 position-relative d-none d-lg-flex"> <a class="d-block w-100 h-100 text-white py-4 position-relative top-link" href="/products/"><strong>Products</strong></a>
+						</li>
+						<li class="nav-item px-3 text-uppercase mb-0 position-relative d-none d-lg-flex"> <a class="d-block w-100 h-100 text-white py-4 position-relative top-link" href="/shop/"><strong>Shop</strong></a>
+						</li>
+						<li class="nav-item px-3 text-uppercase my-3 my-lg-0 mr-5 mr-lg-4 mr-xl-5 d-none d-lg-flex"> <a class="d-block w-100 h-100 text-white py-4 position-relative top-link" href="/contact/"><strong>Contact</strong></a>
+						</li>
+					</ul>
+					<button id="sidenav-open-btn" class="menu-hamburger position-absolute pointer p-0"> <span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<section class="container pb-5" id="maincontent">
+		<div class="row">
+			<div class="col-md-12 col-lg-8 order-md-1 col-centered">
+				<h1 class="text-center p-5 display-4">The Cosmos Awaits</h1>
+				<p class="mb-4">Paragraph</p>
+				<p class="mb-4">Paragraph</p>
+				<p class="mb-4">Paragraph</p>
+				<p class="mb-4">Paragraph</p>
+				<p class="mb-4">Paragraph</p>
+				<p class="mb-4">Paragraph</p>
+			</div>
+		</div>
+	</section>
+</body> -->
+<body>
+    <nav class="navbar h-navbar p-0 fixed-top" id="navbar">
+         <div class="logo"><img src="../static/logo.png" width="100%" height="40" alt=""></div>
+         <div class="burger" onclick="toggleNav()">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+      </div> 
+        <ul class="nav-links" id="navLinks">
+            <li class="align"><a class="nav-link" aria-controls="about" aria-selected="false" role="tab" href="#">About Us</a></li>
+            <li class="align"><a class="nav-link" aria-controls="exp" aria-selected="false" role="tab" href="#">Our Expertise</a></li>
+            <li class="align"><a class="nav-link" aria-controls="contact" aria-selected="false" role="tab" href="#">Contact Us</a></li>
+            <li class="align">
+           <!--
+              <form method="post">
+                {% csrf_token %}
+                <input type="submit" value="Log In">
+              </form>-->
+            <button class="nav-link" aria-controls="login" aria-selected="false" role="tab"><a href="{% url 'login' %}">Login </a></button>
+          </li>
+            <li class="align"><button class="nav-link" aria-controls="signup" aria-selected="false" role="tab"><a href="{% url 'signup' %}">SignUp</button></li>
+        </ul>
+    
+        <!-- <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Login</title>
+        </head>
+        <body>
+            <p>Login here : 
+            <form method="post">
+                {% csrf_token %}
+                <input type="submit" value="Log In">
+            </form></p>
+        </body>
+        </html> -->
+        
+    </nav>
+    <div class="nav"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+            var prev = 0;
+            var $window = $(window);
+            var nav = $('.nav');
+            $window.on('scroll', function() {
+                var scrollTop = $window.scrollTop();
+                nav.toggleClass('hidden', scrollTop > prev);
+                prev = scrollTop;
+            });
+        });
+        function toggleNav() {
+            const navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("active");
+        }
+        let prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            let currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("navbar").classList.remove("navbar-hidden");
+            } else {
+                document.getElementById("navbar").classList.add("navbar-hidden");
+            }
+            prevScrollpos = currentScrollPos;
+        };
+    </script>
+
+
+</body>
+<script>
+  $(document).ready(function () {
+	var previousScroll = 0;
+	$(window).scroll(function () {
+		var currentScroll = $(this).scrollTop();
+		if (currentScroll < 100) {
+			showTopNav();
+		} else if (currentScroll > 0 && currentScroll < $(document).height() - $(window).height()) {
+			if (currentScroll > previousScroll) {
+				hideNav();
+			} else {
+				showNav();
+			}
+			previousScroll = currentScroll;
+		}
+	});
+
+	function hideNav() {
+		$(".navbar").removeClass("is-visible").addClass("is-hidden");
+	}
+
+	function showNav() {
+		$(".navbar").removeClass("is-hidden").addClass("is-visible").addClass("scrolling");
+	}
+});
+</script>
+</html>
+{% endblock %}

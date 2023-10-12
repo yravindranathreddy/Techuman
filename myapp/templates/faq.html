@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+ <html>
+  {% include 'navbar.html' %}
+  {% block content %}
+ <body style="background-color: #1D1D1D; margin: 5%;">
+  <div class="container text-center" style="margin-top: 5%; margin-bottom: 10%;">
+    <div style="text-align: initial;">
+                  <a style="color: white;width: 94px;
+                  height: 43px;
+                  top: 153px;
+                  left: 150px;
+                  font-family: SF Pro Text;
+              font-size: 36px;
+              font-weight: 600;
+              line-height: 43px;
+              letter-spacing: 0em;
+              text-align: left;
+              margin: 8%;
+                  ">FAQs</a>
+              </div>
+      <div class="row">
+        <div class="col col-lg-6 col-sm-12">
+              
+              <div style="color: white;width: 94px;
+              font-family: SF Pro Text;
+              font-size: 70px;
+              font-weight: 600;
+              line-height: 110px;
+              letter-spacing: 0em;
+              text-align: left;
+              
+              text-align: left;
+              margin: 8%;
+              
+              ">
+                  <a >Frequently</a>
+              <a>Asked</a>
+              <a>Questions</a>
+              </div>
+             </div>
+        <div class="col col-lg-6 col-sm-12" style="margin: auto;line-height: 2;margin-bottom: 60px;flex: auto;">
+           <div class="accordion" style="color: white;">
+              
+              <details>
+                <summary>Lorem ipsum dolor sit amet consectetur<span class="accordion-symbol" style="float: right;">+</span></summary>
+                <div class="content">
+                  Lorem ipsum dolor sit amet consectetur. Sagittis orci orci risus lectus feugiat posuere quam. Ut suscipit et dolor mauris lectus. Vestibulum lectus laoreet in semper tincidunt. Mauris vitae etiam velit nam pellentesque integer elementum. Facilisis quam accumsan arcu leo sapien leo lacinia id. Vitae nisi consequat massa convallis libero vitae dolor. Sed nibh integer in faucibus consectetur sapien auctor.
+                </div>
+              </details>
+              <br>
+              <details>
+                <summary>Lorem ipsum dolor sit amet consectetur<span class="accordion-symbol" style="float: right;">+</span></summary>
+                <div class="content">
+                  Lorem ipsum dolor sit amet consectetur. Sagittis orci orci risus lectus feugiat posuere quam. Ut suscipit et dolor mauris lectus. Vestibulum lectus laoreet in semper tincidunt. Mauris vitae etiam velit nam pellentesque integer elementum. Facilisis quam accumsan arcu leo sapien leo lacinia id. Vitae nisi consequat massa convallis libero vitae dolor. Sed nibh integer in faucibus consectetur sapien auctor.
+                </div>
+              </details>
+              <br>
+              <details>
+                  <summary>Lorem ipsum dolor sit amet consectetur<span class="accordion-symbol" style="float: right;">+</span></summary>
+                  <div class="content">
+                    Lorem ipsum dolor sit amet consectetur. Sagittis orci orci risus lectus feugiat posuere quam. Ut suscipit et dolor mauris lectus. Vestibulum lectus laoreet in semper tincidunt. Mauris vitae etiam velit nam pellentesque integer elementum. Facilisis quam accumsan arcu leo sapien leo lacinia id. Vitae nisi consequat massa convallis libero vitae dolor. Sed nibh integer in faucibus consectetur sapien auctor.
+                  </div>
+                </details>
+                <br>
+                <details>
+                  <summary >Lorem ipsum dolor sit amet consectetur<span class="accordion-symbol" style="float: right;">+</span></summary>
+                  <div class="content" >
+                    Lorem ipsum dolor sit amet consectetur. Sagittis orci orci risus lectus feugiat posuere quam. Ut suscipit et dolor mauris lectus. Vestibulum lectus laoreet in semper tincidunt. Mauris vitae etiam velit nam pellentesque integer elementum. Facilisis quam accumsan arcu leo sapien leo lacinia id. Vitae nisi consequat massa convallis libero vitae dolor. Sed nibh integer in faucibus consectetur sapien auctor.
+                  </div>
+                </details>
+            </div>             
+        </div>
+      </div>
+      
+    </div>
+</body>
+ <script src="script.js"></script>
+ </html>
+ <style>
+    .accordion details {
+  border-top-style: solid;
+border-bottom-style: solid;
+border-width: thin;
+}
+
+.accordion summary {
+  font-weight: bold;
+  cursor: pointer;
+}
+.accordion summary::marker{
+  content: none;
+}
+.accordion .content {
+  padding: 10px;
+  display: none;
+}
+
+.accordion details[open] .content {
+  display: block;
+}
+
+/* @media (max-width: 576px) { 
+    .col {
+      width: 100%; 
+    }
+  } */
+
+</style>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+  {% include 'navbar.html' %}
+  {% include 'ourexpertise.html' %}
+  {% include 'faq.html' %}
+  {% block content %}
+    <body style="background-color: #1D1D1D;">
+<div class="row text-center" style=" margin-top: 5%;margin-bottom: 15%;">
+    <div class="col col-lg-4 col-sm-12">
+        <div class="card h-100 border-0" style="background-color: black;">
+            <div class="card-body">
+             <img src="../static/avatar.png" width="50%" style="margin-top: 15%;">
+            </div>
+        </div>
+    </div>
+    <div class="col col-lg-4 col-sm-12" >
+        <div class="card h-100 border-0" style="background-color: black;">
+            <div style="margin: 10%;"></div>
+            <div class="card-body">
+              <p class="card-text" style="text-align: right;color: white;">To embellish face value, we have added in lip-sync, our special feature, to provide with flawless lip synchronization! So as to also add a dollop of delight to go with the emotive capability, the lip synch provides rich features like a library of moth shapes, automatic phoneme detection along with effortless audio integration. Go ahead, create lifelike characters and scenes effortlessly - as an animator, game developer or content creator!</p>
+              <button type="button" class="btn"
+              style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;float: right;border-radius: 20px; background-color: whitesmoke;">
+              ReadMore
+              </button>
+            </div>
+            <!-- <div class="card-footer" style="background-color: black;">
+              
+            </div> -->
+        </div>
+    </div>
+    <div class="col col-lg-4 col-sm-12" style="margin-top: -55px;">
+        <div class="card h-100 border-0" style="background-color: black;align-items: center;margin-top: 10%;">
+            <div style="margin: 14%;"></div>
+        <div class="card-body lip">
+            <p class="card-text"  style="font-family: SF Pro Text;
+            font-size: 72px;
+            font-weight: 600;
+            line-height: 86px;
+            letter-spacing: 0em;
+            /* text-align: right; */
+            inline-size: min-content;
+            /* float: right; */
+            color: white;
+            ">Lip sync Animation</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+  </html>
+  
+  <style>
+    .lip{font-family: SF Pro Text;
+            font-size: 72px;
+            font-weight: 600;
+            line-height: 40px;
+            letter-spacing: 0em;
+            text-align: right;
+            inline-size: min-content;
+            /* float: right; */
+            color: white;
+    }
+  </style>
+  {% endblock %}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+  
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+      
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+     
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"] {
+            background-color: #d17d7d;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1d1e1e;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+  
+    <div class="container">
+       
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <label for="username">Username :</label>
+            <input type="text" id="username" name="Email"><br>
+            
+            <label for="password">Password :</label>
+            <input type="password" id="password" name="password"><br>
+            
+            <input type="submit" value="Login" id="loginButton">
+        </form>
+        
+        <p>User Count: <span id="userCount"></span></p>
+        <p>Your IP Address: {{ user_ip }}</p>
+    </div>
+ 
+    <script>
+        function getUserCount() {
+            return parseInt(localStorage.getItem('user_count')) || 0;
+        }
+
+        function setUserCount(count) {
+            localStorage.setItem('user_count', count);
+        }
+
+        document.getElementById('userCount').textContent = getUserCount();
+
+        document.getElementById('loginButton').addEventListener('click', function (event) {
+            event.preventDefault();
+
+            var usernameInput = document.getElementById('username').value;
+            var passwordInput = document.getElementById('password').value;
+
+            var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            var numericRegex = /^\d+$/;
+
+            if (!emailRegex.test(usernameInput)) {
+                alert('Invalid email format. Please enter a valid email.');
+                return;
+            }
+
+            if (!numericRegex.test(passwordInput)) {
+                alert('Password must contain only numeric digits.');
+                return;
+            }
+
+            var userCount = getUserCount();
+            userCount += 1;
+            setUserCount(userCount);
+            document.getElementById('userCount').textContent = userCount;
+
+           
+            window.location.href = '/success'; 
+
+        });
+       
+    </script>
+</body>
+</html>
